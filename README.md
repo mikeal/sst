@@ -8,7 +8,7 @@ The goal of this spec is to separate the test format from the runner/framework.
 
 # Basics
 
-* A given JavaScript module (ESM or CommonjS depending on your environment) is the top level container for tests.
+* A given JavaScript module (ESM or CommonJS depending on your environment) is the top level container for tests.
 * All tests are functions.
 * All exported functions are tests.
 * A module may export multiple test functions or a single default export function as its only test.
