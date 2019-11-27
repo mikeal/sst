@@ -21,6 +21,22 @@ The goal of this spec is to separate the test format from the runner/framework.
   during reporting.
 * That's it!
 
+## Motivations / Goals
+
+* In order to write tests that run easily across different environments (Node.js, Browsers, etc) we need
+to separate the test runner (platform specific) from the tests themselves (plain JavaScript).
+* Lay the groundwork for "Universal JavaScript Tests" (tests that can run in browsers, Node.js, and future
+JS platforms without a compiler.
+* Enable people to write tests that others can safely run in a browser sandbox. This is useful for running
+all the tests of dependent projects before updating a widely used dependency.
+
+A few constraints imposed by these goals.
+
+* No callback based tests. Sync functions are considered sync tests and async functions are async tests.
+* Exceptions must be the only way to fail a test.
+* No metadata about the tests can be "out of band" in package.json or elsewhere because this presumes a
+compiler and will not work for native ESM in the browser.
+
 ## Test Examples
 
 Single exports
